@@ -41,17 +41,19 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}/>
       
-{/*       <SearchItem
+      <SearchItem
         search={search}
         setSearch={setSearch} 
-        items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
-        /> */}
+        
+        />
       
       <Content
-      items={items}
+      items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+      
       setItems={setItems}
       />
-      {}
+      {/*items={items}
+       items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))} */}
         
       
       <Footer />
