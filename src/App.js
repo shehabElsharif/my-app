@@ -49,7 +49,7 @@ function App() {
       
       <Content
       items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
-      
+      storedItems={items}
       setItems={setItems}
       />
       {/*items={items}

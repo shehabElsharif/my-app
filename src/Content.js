@@ -1,22 +1,21 @@
 import ItemList from './ItemList';
 
-const Content = ({items, setItems}) => {
+const Content = ({items, setItems, storedItems}) => {
 
     const handleCheck = (id) => {
-        const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+        const listItems = storedItems.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
         setItems(listItems);
         localStorage.setItem('shoppinglist', JSON.stringify(listItems));
     }
 
     const handleDelete = (id) => {
-        const listItems = items.filter((item) => item.id !== id);
+        const listItems = storedItems.filter((item) => item.id !== id);
         setItems(listItems);
         localStorage.setItem('shoppinglist', JSON.stringify(listItems));
     }
-
     return (
         <main>
-             {items.length ? (
+             {storedItems.length ? (
                 <ItemList 
             items={items}
             handleCheck={handleCheck}
